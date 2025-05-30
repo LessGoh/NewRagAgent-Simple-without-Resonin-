@@ -1,6 +1,6 @@
 from llama_index.llms.openai import OpenAI
 import os
-from agents.tools import ResearchTools
+from .tools import ResearchTools  # ← Относительный импорт
 from typing import List, Dict, Any
 
 class SimpleResearchAgent:
