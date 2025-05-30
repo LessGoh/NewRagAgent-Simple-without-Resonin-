@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from config import Config, validate_config
-from agents.finance_agent import FinanceAnalysisAgent
+from agents.finance_agent import SimpleResearchAgent
 from utils.streamlit_utils import StreamlitUtils
 
 # Конфигурация страницы
@@ -35,7 +35,7 @@ def main():
     if st.session_state.agent is None:
         with st.spinner("🚀 Инициализация AI-ассистента..."):
             try:
-                st.session_state.agent = FinanceAnalysisAgent()
+                st.session_state.agent = SimpleResearchAgent()
                 st.success("✅ AI-ассистент готов к работе!")
             except Exception as e:
                 st.error(f"❌ Ошибка инициализации: {e}")
